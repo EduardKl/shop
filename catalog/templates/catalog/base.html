@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'shop/css/base.html' %}">
+    <script src="{% static 'shop/js/base.js' %}"></script>
+</head>
+<body>
+    <header>
+        <h1>Интернет-магазин</h1>
+        <section>Корзина</section>
+    </header>
+    <hr>
+    <main>
+        <section>Меню</section>
+        <section>{% block content %}{% endblock %}</section>
+        <section>Фильтр</section>
+    </main>
+    <hr>
+    <footer>Подвал</footer>
+</body>
+</html>
