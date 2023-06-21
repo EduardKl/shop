@@ -1,0 +1,50 @@
+body {
+    background-color: #ccc;
+
+}
+
+
+.nav-menu {
+    &__header {}
+    &__categories {}
+    &__category {}
+}
+
+
+.wrapper {
+    margin: 20px auto;
+    padding: 10px;
+    width: 80%;
+    background-color: white;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.3);
+
+    &__header {}
+    &__main {}
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px 20px;
+
+    &__site-name {}
+    &__cart {
+        line-height: 4;
+    }
+}
+
+
+.main {
+    display: flex;
+    justify-content: space-around;
+
+
+    &__header {}
+    &__content {
+        flex-grow: 2;
+        padding: 20px 10px 10px 50px;
+    }
+    &__filter {}
+}

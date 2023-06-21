@@ -1,0 +1,41 @@
+{% load static %}
+{% load site_nav_menu_tag %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'main_app/css/base.css' %}">
+    <script src="{% static 'main_app/js/base.js' %}"></script>
+</head>
+<body>
+    <section class="wrapper">
+        <header class="wrapper__header header">
+            <h1 class="header__site-name">Интернет-магазин</h1>
+            <section class="header__cart">
+                {% with count_items=cart|length %}
+                    {% if count_items > 0 %}
+                        <a href="{% url 'cart:detail' %}">
+                            {{ count_items }} тов. | ${{ cart.get_total_price }}
+                        </a>
+                    {% else %}
+                        Корзина пуста
+                    {% endif %}
+                {% endwith %}
+            </section>
+        </header>
+        <hr>
+        <main class="wrapper__main main">
+            {% show_nav_menu %}
+            <section class="main__content">{% block content %}{% endblock %}</section>
+            <!--<section class="main__filter">Фильтр</section>-->
+        </main>
+        <hr>
+        <footer class="wrapper__footer footer">
+            <section class="footer__site-map">Карта сайта</section>
+            <section class="footer__social-network">Соц. сети</section>
+        </footer>
+
+    </section>
+</body>
+</html>

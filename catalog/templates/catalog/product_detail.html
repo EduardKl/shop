@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'main_app/base.html' %}
 
-</body>
-</html>
+{% block content %}
+<section>
+    <h3>{{ product.name }}</h3>
+    <img src="/media/{{ product.image }}" alt="{{ product.name }}">
+    <section>
+        {{ product.description|linebreaks }}
+        <section>
+            <secion>
+                Цена: <span>${{ product.price }}</span> за 100г.
+            </secion>
+            <form method="POST" action="{% url 'cart:add' product.slug %}">
+                {% csrf_token %}
+                {{ cart_product_form }}
+                <button type="submit">В корзину</button>
+            </form>
+        </section>
+    </section>
+</section>
+<a href="{% url 'main_app:home' %}">На главную</a>
+{% endblock %}

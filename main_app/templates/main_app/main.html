@@ -1,0 +1,11 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h3>Все товары</h3>
+    {% for prod in products %}
+        <ul>
+            <li><a href="catalog/{{ prod.category.slug }}/{{ prod.slug }}">{{ prod.name }}</a></li>
+        </ul>
+    {% endfor %}
+{% endblock %}

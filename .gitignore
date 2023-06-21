@@ -1,5 +1,6 @@
 .git
 .idea
-.env
-
 **/__pycache__/
+*.css
+*.map
+.env

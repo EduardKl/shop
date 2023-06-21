@@ -3,9 +3,9 @@ from django.urls import reverse
 
 # Create your models here.
 class Product(models.Model):
+    category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True, related_name='product', verbose_name='Категория')
     name = models.CharField(max_length=200, db_index=True, verbose_name='Наименование')
     slug = models.SlugField(max_length=200, db_index=True, unique=True, verbose_name='Псевдоним')
-    category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True, related_name='product', verbose_name='Категория')
     image = models.FileField(upload_to='products/%Y/%m/%d', blank=True, verbose_name='Изображение')
     description = models.TextField(blank=True, verbose_name='Описание')
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена')
@@ -18,7 +18,7 @@ class Product(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('catalog:product_detail', kwargs={'product_slug': self.slug})
+        return reverse('catalog:product_detail', kwargs={'category_slug': self.category.slug, 'product_slug': self.slug})
 
     class Meta:
         verbose_name = 'Товар'
@@ -31,9 +31,9 @@ class Product(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=200, db_index=True, verbose_name='Наименование')
     slug = models.SlugField(max_length=200, db_index=True, unique=True, verbose_name='Псевдоним')
-    parent_cat = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True, related_name='children', verbose_name='Родительская категория')
-    child_cat = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True, related_name='parents', verbose_name='Дочерняя категория')
+    description = models.TextField(blank=True, verbose_name='Описание')
 
+    parent_cat = models.ForeignKey('Category', on_delete=models.CASCADE, blank=True, related_name='children', verbose_name='Родительская категория')
 
     def __str__(self):
         return self.name

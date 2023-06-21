@@ -5,5 +5,5 @@ from .views import *
 
 app_name = 'catalog'
 urlpatterns = [
-    path('', MainPage.as_view(), name='main')
+    path('<slug:category_slug>/<slug:product_slug>/', ProductDetail.as_view(), name='product_detail')
 ]
