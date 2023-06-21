@@ -52,5 +52,5 @@
     </tfoot>
 </table>
 <a href="{% url 'main_app:home' %}">На главную</a>
-<a href="#">Оформить заказ</a>
+<a href="{% url 'orders:order_create' %}">Оформить заказ</a>
 {% endblock %}

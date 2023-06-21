@@ -1,0 +1,28 @@
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+<section>
+    <h2>Оформление заказа</h2>
+    <section>
+        <h3>Ваш заказ:</h3>
+        <ul>
+            {% for item in cart %}
+                <li>
+                    {{ item.quantity }}x {{ item.product.name }}
+                    <span>${{ item.total_price }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h3>Ваши данные:</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Оформить</button>
+        </form>
+    </section>
+    <a href="{% url 'cart:detail' %}">Отмена</a>
+    <a href="{% url 'main_app:home' %}">На главную</a>
+</section>
+{% endblock %}
