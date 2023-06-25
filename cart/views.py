@@ -16,7 +16,6 @@ def card_add(request, product_slug):
         cart.add(product=product,
                  quantity=form_data['quantity'],
                  override_quantity=form_data['override'])
-        print('SAVE!!!', cart.cart)
     return redirect('cart:detail')
 
 @require_POST

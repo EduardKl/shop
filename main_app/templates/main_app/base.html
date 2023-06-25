@@ -1,12 +1,13 @@
 {% load static %}
-{% load site_nav_menu_tag %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{% static 'main_app/css/base.css' %}">
+    {% block css_links %}{% endblock %}
     <script src="{% static 'main_app/js/base.js' %}"></script>
+    {% block js_links %}{% endblock %}
 </head>
 <body>
     <section class="wrapper">
@@ -24,18 +25,13 @@
                 {% endwith %}
             </section>
         </header>
-        <hr>
         <main class="wrapper__main main">
-            {% show_nav_menu %}
-            <section class="main__content">{% block content %}{% endblock %}</section>
-            <!--<section class="main__filter">Фильтр</section>-->
+            {% block main %}{% endblock %}
         </main>
-        <hr>
         <footer class="wrapper__footer footer">
             <section class="footer__site-map">Карта сайта</section>
             <section class="footer__social-network">Соц. сети</section>
         </footer>
-
     </section>
 </body>
 </html>

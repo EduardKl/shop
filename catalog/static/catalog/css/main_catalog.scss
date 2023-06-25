@@ -1,0 +1,12 @@
+.main {
+    display: flex;
+    justify-content: space-around;
+
+    &__header {}
+    &__content {
+        flex-grow: 2;
+        border: 1px solid red;
+        padding: 20px 10px 10px 50px;
+    }
+    &__filter {}
+}

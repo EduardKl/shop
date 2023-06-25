@@ -1,11 +1,19 @@
 {% extends 'main_app/base.html' %}
 {% load static %}
 
-{% block content %}
-    <h3>Все товары</h3>
-    {% for prod in products %}
-        <ul>
-            <li><a href="catalog/{{ prod.category.slug }}/{{ prod.slug }}">{{ prod.name }}</a></li>
-        </ul>
-    {% endfor %}
+{% block css_links %}
+<link rel="stylesheet" href="{% static 'main_app/main_page.css' %}">
+{% endblock %}
+
+{% block main %}
+    <a href="{% url 'catalog:main_catalog' %}">Каталог</a>
+    <h2>{{ title }}</h2>
+    <section>Слайдер</section>
+    <section>
+        <section>Новинки</section>
+        <section>Со скидками</section>
+        <section>Бренды</section>
+    </section>
+    <section>Товары дня</section>
+    <section>Самые просматриваемые</section>
 {% endblock %}
