@@ -1,0 +1,85 @@
+.slyder {
+    border: 1px solid blue;
+    &__header {
+        border: 1px solid gray;
+        text-align: center;
+    }
+    &__slydes {}
+    &__slyde {}
+}
+.slyde {
+    border: 1px solid yellow;
+    &__img {}
+    &__header {
+        border: 1px solid gray;
+        text-align: center;
+    }
+    &__desc {
+        text-align: center;
+    }
+}
+
+.interests {
+    border: 1px solid blue;
+
+    &__header {
+        border: 1px solid gray;
+        text-align: center;
+    }
+    &__items {
+        display: flex;
+        justify-content: space-around;
+    }
+    &__item {
+        border: 1px solid blueviolet;
+    }
+}
+.new-prods {
+    &__img {}
+    &__header {}
+}
+
+
+.day-goods {
+    border: 1px solid blue;
+
+    &__header {
+        border: 1px solid gray;
+        text-align: center;
+    }
+    &__items {
+        display: flex;
+        justify-content: space-around;
+    }
+    &__item {
+        border: 1px solid burlywood;
+    }
+}
+
+
+.prod {
+    border: 1px solid red;
+    &__img {}
+    &__header {}
+    &__params {}
+}
+.params {
+    &__price {}
+    &__views {}
+    &__reviews {}
+}
+
+
+.popular-prods {
+    border: 1px solid blue;
+
+    &__header {
+        border: 1px solid gray;
+        text-align: center;
+    }
+    &__items {
+        display: flex;
+        justify-content: space-around;
+    }
+    &__item {}
+}

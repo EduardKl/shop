@@ -2,18 +2,121 @@
 {% load static %}
 
 {% block css_links %}
-<link rel="stylesheet" href="{% static 'main_app/main_page.css' %}">
+<link rel="stylesheet" href="{% static 'main_app/css/main_page.css' %}">
 {% endblock %}
 
 {% block main %}
     <a href="{% url 'catalog:main_catalog' %}">Каталог</a>
     <h2>{{ title }}</h2>
-    <section>Слайдер</section>
-    <section>
-        <section>Новинки</section>
-        <section>Со скидками</section>
-        <section>Бренды</section>
+    <section class="slyder">
+        <h3 class="slyder__header">Слайдер</h3>
+        <section class="slyder__slydes">
+            <section class="slyder__slyde slyde">
+                <img class="slyde__img" alt="Изображение слайда 1">
+                <h4 class="slyde__header">Слайд 1</h4>
+                <p class="slyde__desc">Описание</p>
+            </section>
+            <section class="slyder__slide slyde">
+                <img class="slyde__img" alt="Изображение слайда 2">
+                <h4 class="slyde__header">Слайд 2</h4>
+                <p class="slyde__desc">Описание</p>
+            </section>
+            <section class="slyder__slyde slyde">
+                <img class="slyde__img" alt="Изображение слайда 3">
+                <h4 class="slyde__header">Слайд 3</h4>
+                <p class="slyde__desc">Описание</p>
+            </section>
+            <section class="slyder__slyde slyde">
+                <img class="slyde__img" alt="Изображение слайда 4">
+                <h4 class="slyde__header">Слайд 4</h4>
+                <p class="slyde__desc">Описание</p>
+            </section>
+            <section class="slyder__slyde slyde">
+                <img class="slyde__img" alt="Изображение слайда 5">
+                <h4 class="slyde__header">Слайд 5</h4>
+                <p class="slyde__desc">Описание</p>
+            </section>
+        </section>
     </section>
-    <section>Товары дня</section>
-    <section>Самые просматриваемые</section>
+    <section class="interests">
+        <h2 class="interests__header">Вам может быть интересно</h2>
+        <section class="interests__items">
+            <section class="interests__item new-prods">
+                <img class="new-prods__img" src="" alt="Новинки">
+                <h3 class="new-prods__header">Новинки</h3>
+            </section>
+            <section class="interests__item disc-prods">
+                <img class="disc-prods__img" src="" alt="Товары со скидками">
+                <h3 class="disc-prods__header">Со скидками</h3>
+            </section>
+            <section class="interests__item brands">
+                <img class="brands__img" src="" alt="Бренды">
+                <h3 class="brands__header">Бренды</h3>
+            </section>
+        </section>
+    </section>
+    <section class="day-goods">
+        <h2 class="day-goods__header">Товары дня</h2>
+        <section class="day-goods__items">
+            <section class="day-goods__item prod">
+                <img class="prod__img" src="" alt="Товар дня 1">
+                <h3 class="prod__header">Товар дня 1</h3>
+                <ul class="prod__params params">
+                    <li class="params__price">Цена</li>
+                    <li class="params__views">Просмотры</li>
+                    <li class="params__reviews">Отзывы</li>
+                </ul>
+            </section>
+            <section class="day-goods__item prod">
+                <img class="prod__img" src="" alt="Товар дня 2">
+                <h3 class="prod__header">Товар дня 2</h3>
+                <ul class="prod__params params">
+                    <li class="params__price">Цена</li>
+                    <li class="params__views">Просмотры</li>
+                    <li class="params__reviews">Отзывы</li>
+                </ul>
+            </section>
+            <section class="day-goods__item prod">
+                <img class="prod__img" src="" alt="Товар дня 3">
+                <h3 class="prod__header">Товар дня 3</h3>
+                <ul class="prod__params params">
+                    <li class="params__price">Цена</li>
+                    <li class="params__views">Просмотры</li>
+                    <li class="params__reviews">Отзывы</li>
+                </ul>
+            </section>
+        </section>
+    </section>
+    <section class="popular-prods">
+        <h2 class="popular-prods__header">Часто просматриваемые</h2>
+        <section class="popular-prods__items">
+            <section class="popular-prods__item prod">
+                <img class="prod__img" src="" alt="Часто просматриваемый товар 1">
+                <h3 class="prod__header">Часто просматриваемый товар 1</h3>
+                <ul class="prod__params params">
+                    <li class="params__price">Цена</li>
+                    <li class="params__views">Просмотры</li>
+                    <li class="params__reviews">Отзывы</li>
+                </ul>
+            </section>
+            <section class="popular-prods__item prod">
+                <img class="prod__img" src="" alt="Часто просматриваемый товар 2">
+                <h3 class="prod__header">Часто просматриваемый товар 2</h3>
+                <ul class="prod__params params">
+                    <li class="params__price">Цена</li>
+                    <li class="params__views">Просмотры</li>
+                    <li class="params__reviews">Отзывы</li>
+                </ul>
+            </section>
+            <section class="popular-prods__item prod">
+                <img class="prod__img" src="" alt="Часто просматриваемый товар 3">
+                <h3 class="prod__header">Часто просматриваемый товар 3</h3>
+                <ul class="prod__params params">
+                    <li class="params__price">Цена</li>
+                    <li class="params__views">Просмотры</li>
+                    <li class="params__reviews">Отзывы</li>
+                </ul>
+            </section>
+        </section>
+    </section>
 {% endblock %}
