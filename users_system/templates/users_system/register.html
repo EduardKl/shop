@@ -1,0 +1,24 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+
+{% block css_links %}
+<link rel="stylesheet" href="{% static 'users_system/css/register.css' %}}">
+{% endblock %}
+
+{% block main %}
+<form class="register-form" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+        <section class="register-form__field-block">
+            <label class="register-form__label" for="{{ field.id_for_label }}">{{ field.label }}:</label>
+            {{ field }}
+            <div class="refister-form__error">{{ field.errors }}</div>
+        </section>
+    {% endfor %}
+    <button type="submit">Зарегистрироваться</button>
+</form>
+<a href="{% url 'main_app:main' %}">На главную</a>
+{% endblock %}
+
+

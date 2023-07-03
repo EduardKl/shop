@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from shop_site import settings
 from .models import OrderItem
 from .forms import OrderCreateForm
+from .tasks import order_created
 from cart.cart import Cart
 
 
@@ -29,7 +30,7 @@ def order_create(request):
                     quantity = quantity
                 )
             cart.clear()
-
+            # order_created.delay(order.id)
             
             send_mail(f'Заказ {order.id} оформлен.',
                       f'Заказ {order.id} на товары {cart_items} оформлен.',

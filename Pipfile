@@ -8,8 +8,10 @@ django = "*"
 psycopg2-binary = "*"
 django-environ = "*"
 pillow = "*"
+celery = "*"
 
 [dev-packages]
+flower = "*"
 
 [requires]
 python_version = "3.11"

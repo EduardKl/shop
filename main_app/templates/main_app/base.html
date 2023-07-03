@@ -13,6 +13,14 @@
     <section class="wrapper">
         <header class="wrapper__header header">
             <h1 class="header__site-name">Интернет-магазин</h1>
+            <section>
+                {% if request.user.is_authenticated %}
+                    <span>{{ user.first_name }} {{ user.last_name }}</span> | <a href="{% url 'users_system:logout' %}">Выйти</a>
+                {% else %}
+                    <a href="{% url 'users_system:login' %}">Войти</a>
+                    <a href="{% url 'users_system:register' %}">Регистрация</a>
+                {% endif %}
+            </section>
             <section class="header__cart">
                 {% with count_items=cart|length %}
                     {% if count_items > 0 %}
